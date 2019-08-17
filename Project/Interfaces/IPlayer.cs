@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using CastleGrimtol.Project.Models;
+using PirateShip.Project.Models;
 
-namespace CastleGrimtol.Project.Interfaces
+namespace PirateShip.Project.Interfaces
 {
-    public interface IPlayer
-    {
-        string PlayerName { get; set; }
-        List<Item> Inventory { get; set; }
-    }
+  public interface IPlayer
+  {
+    string PlayerName { get; set; }
+    List<Item> Inventory { get; set; }
+  }
 }
