@@ -21,7 +21,6 @@ namespace PirateShip.Project.Models
     }
 
     public IRoom Go(string direction)
-    // This method must stop player from entering Stores room until a key is in the inventory, or until key is no longer in Captain.Items
     {
       if (Exits.ContainsKey(direction))
       {
@@ -29,14 +28,7 @@ namespace PirateShip.Project.Models
       }
       Console.WriteLine("That's wrong");
       return this;
-
     }
-
-    // public void PrintRoom(Room room)
-    // {
-    //   Console.WriteLine(room.Name);
-    //   Console.WriteLine(room.Description);
-    // }
 
     public Room(string name, string description)
     {
@@ -44,7 +36,6 @@ namespace PirateShip.Project.Models
       Description = description;
       Items = new List<Item>();
       Exits = new Dictionary<string, IRoom>();
-      // string = direction, IRoom = room in that direction
     }
   }
 }

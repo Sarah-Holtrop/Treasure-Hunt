@@ -14,13 +14,19 @@ namespace PirateShip
     }
   }
 }
-// Bow- start,  (Go down)
-// Crew's quarters-2nd room
-// Captain's quarters(stern) - key
 
-// Stores- need key to get in- treasure
 
-// Stretch Goals-
-//  Crow's nest- fun view
-//  Compass- bonus treasure
+// TODO Rooms- Create, add items, add exits
+// Bow- compass
+// Crow's nest- spyglass
+// Gangway- null
+// Stern- null
+// Poopdeck- smuggled coins 
+// Crew- Gold dubloon
+// Captain- cursed medallion
+// Hold(change from stores)- gems
+
+
+// TODO Rewrite UseItem fn, each item has a value, which is added to total findings when you give item back (use) to ghost of captain,
+// If you use cursed medallion, you lose all your money, and all items are put back 
 

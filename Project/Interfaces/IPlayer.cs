@@ -7,5 +7,6 @@ namespace PirateShip.Project.Interfaces
   {
     string PlayerName { get; set; }
     List<Item> Inventory { get; set; }
+    int Findings { get; set; }
   }
 }
