@@ -84,13 +84,13 @@ namespace PirateShip.Project
       Item gems = new Item("Gems", "Piles of emeralds, rubies, sapphires sparkling even in the darkness", 1000);
 
 
-      Room bow = new Room("Bow", "You are on the bow of the ship. Behind you is the ocean, and in front of you is the rest of the ship. There is a small trapdoor at your feet.");
-      Room crowsNest = new Room("Crow's Nest", "You are in the Crow's Nest. You can see for miles up here.");
-      Room gangway = new Room("Gangway", "You are walking along the gangway");
-      Room stern = new Room("Stern", "You are at the stern of the ship");
-      Room poopDeck = new Room("Poop Deck", "You are on the Poopdeck");
-      Room crew = new Room("Crew's Quarter's", "You are in the Crew's Quarters. You see an open doorway across the room labeled \"Captain's Quarters\". On the wall to the left of the Captain's Quarters is a closed door labeled \"Hold\".");
-      Room captain = new Room("Captain's quarters", "You are in the Captain's quarters. There is a large important-looking desk.");
+      Room bow = new Room("Bow", "You are on the bow of the ship. Behind you is the ocean, and in front of you is the rest of the ship. Before you, there is a small trapdoor at your feet, and a ladder leading up to the crow's nest. Something sparkly is catching the light.");
+      Room crowsNest = new Room("Crow's Nest", "You are in the Crow's Nest. You can see for miles up here. There is something gleaming tangled in the ropes.");
+      Room gangway = new Room("Gangway", "You are walking along the gangway.");
+      Room stern = new Room("Stern", "You are at the stern of the ship. A small stairway leads up to the poopdeck.");
+      Room poopDeck = new Room("Poop Deck", "You are on the Poopdeck. You are at the farthest possible position from the bow. One of the floorboards seems to be loose.");
+      Room crew = new Room("Crew's Quarter's", "You are in the Crew's Quarters. You see an open doorway across the room labeled \"Captain's Quarters\". On the wall to the left of the Captain's Quarters is a closed door labeled \"Hold\". One of the old mattresses looks unusually lumpy.");
+      Room captain = new Room("Captain's quarters", "You are in the Captain's quarters. There is a large important-looking desk with many drawers.");
       Room hold = new Room("Hold", "You are in the hold. You see rows of stacks of barrels, and at the end, a very large old-looking treasure chest.");
 
       bow.AddExit("up", crowsNest);
@@ -125,12 +125,9 @@ namespace PirateShip.Project
       Console.WriteLine("Ahoy there laddie! Who disturbs my peace?");
       string name = Console.ReadLine();
       CurrentPlayer = new Player(name);
-      Console.WriteLine("When you climbed aboard my ship, you disturbed my slumber! Me name's Beardy McWeirdy, and me treasures were left scattered about when me crew jumped ship years ago. I cannot go to rest until me treasure is returned to me! Can you help me by finding the treasures and giving them back? I will reward you with yer currency you call \"dollars\". When you find an item, just give it to me!");
+      Console.WriteLine($" Welcome aboard, {CurrentPlayer.PlayerName}! When you climbed aboard my ship, you disturbed my slumber! Me name's Beardy McWeirdy, and me treasures were left scattered about when me crew jumped ship years ago. I cannot go to rest until me treasure is returned to me! Can you help me by finding the treasures and giving them back? I will reward you with yer currency you call \"dollars\". When you find an item, just give it to me!");
+      Console.WriteLine("If you get stuck, type \"look\" to take a look around.");
 
-      // Console.WriteLine($"You are treasure hunter, {CurrentPlayer.PlayerName}. You have found Beardy McWeirdy's lost pirate ship 'Fool's Gold' in search of his hidden treasures. You climb aboard and find yourself on the {CurrentRoom.Name.ToLower()}. ");
-      // Console.WriteLine("");
-      Look();
-      // Console.WriteLine("What do you want to do?");
 
       while (GameIsOn)
       {
@@ -166,6 +163,9 @@ namespace PirateShip.Project
             break;
           case "help":
             Help();
+            break;
+          case "reset":
+            Reset();
             break;
 
         }
