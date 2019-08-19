@@ -9,7 +9,6 @@ namespace PirateShip.Project.Models
     public List<Item> Inventory { get; set; }
     public int Findings { get; set; }
 
-    // private int Findings { get; set; }
 
     public Player(string name)
     {
