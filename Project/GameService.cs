@@ -159,6 +159,8 @@ namespace PirateShip.Project
 
       string name = Console.ReadLine();
       CurrentPlayer = new Player(name);
+      // For faster monologue, uncomment:
+      // Console.WriteLine($" Welcome aboard, {CurrentPlayer.PlayerName}! When you climbed aboard my ship, you disturbed my slumber! Me name's Beardy McWeirdy, ye olde captain of this here ship \"Fool's Gold\". I've been haunting her since me crew jumped ship years ago. I cannot go to rest until all me treasure is returned to me! Can you help me by finding the treasures and giving them back? I will reward you with yer currency you call \"dollars\". When you find an item, just give it to me!");
       string monologue = $" Welcome aboard, {CurrentPlayer.PlayerName}! When you climbed aboard my ship, you disturbed my slumber! Me name's Beardy McWeirdy, ye olde captain of this here ship \"Fool's Gold\". I've been haunting her since me crew jumped ship years ago. I cannot go to rest until all me treasure is returned to me! Can you help me by finding the treasures and giving them back? I will reward you with yer currency you call \"dollars\". When you find an item, just give it to me! \n";
       foreach (char letter in monologue)
       {
@@ -218,7 +220,6 @@ namespace PirateShip.Project
         }
         CurrentPlayer.Findings += item.Value;
         CurrentPlayer.Inventory.Remove(item);
-        Console.WriteLine(CurrentPlayer.Findings);
         Console.WriteLine($"So far, {CurrentPlayer.PlayerName} has ${CurrentPlayer.Findings}");
       }
       // medallion is "cursed" so UseItem("medallion") functions differently
