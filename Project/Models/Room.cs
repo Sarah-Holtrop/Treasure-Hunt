@@ -26,7 +26,7 @@ namespace PirateShip.Project.Models
       {
         return Exits[direction];
       }
-      Console.WriteLine("That's wrong");
+      Console.WriteLine("Can't go that way!");
       return this;
     }
 
